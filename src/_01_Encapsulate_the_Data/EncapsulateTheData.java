@@ -11,7 +11,15 @@ public class EncapsulateTheData {
 	/* 
 	 * All negative arguments should set itemsReceived to 0.
 	 */
-
+	public void setItemsReceived(int itemsReceived) {
+	
+		if(itemsReceived < 0) {
+			
+			this.itemsReceived = 0;
+		}
+		
+}
+	
 private	int itemsReceived;
 
 	/*
@@ -21,6 +29,23 @@ private	int itemsReceived;
 	 * bound.
 	 */
 
+
+
+public void setDegreesTurned(double degreesTurned) {
+	
+	if(degreesTurned<0) {
+		
+		degreesTurned = 0;
+	}
+	
+	if(degreesTurned>360) {
+		
+		degreesTurned = 360;
+	}
+	
+}
+
+
 private double degreesTurned;
 
 	/*
@@ -29,6 +54,15 @@ private double degreesTurned;
 	 * An empty String parameter should set nomenclature to a String with a single
 	 * space.
 	 */
+
+public void setNomenClature(String nomenclature) {
+	if(nomenclature.equals("")) {
+		nomenclature = " ";
+		
+	}
+	
+	
+}
 
 	private String nomenclature;
 
