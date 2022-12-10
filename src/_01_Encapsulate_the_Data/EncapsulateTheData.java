@@ -18,7 +18,20 @@ public class EncapsulateTheData {
 			this.itemsReceived = 0;
 		}
 		
-}
+
+	
+	else {
+		this.itemsReceived = itemsReceived;
+	
+	}
+	
+	}
+	
+	public Integer getItemsReceived{
+		
+		return itemsReceived;
+	}
+	
 	
 private	int itemsReceived;
 
@@ -35,14 +48,23 @@ public void setDegreesTurned(double degreesTurned) {
 	
 	if(degreesTurned<0) {
 		
-		degreesTurned = 0;
+		this.degreesTurned = 0;
 	}
 	
-	if(degreesTurned>360) {
+	else if(degreesTurned>360) {
 		
-		degreesTurned = 360;
+		this.degreesTurned = 360;
 	}
 	
+	else {
+		this.degreesTurned = degreesTurned;
+	}
+	
+}
+
+public double getDegreesTurned() {
+	
+	return degreesTurned;
 }
 
 
@@ -55,14 +77,23 @@ private double degreesTurned;
 	 * space.
 	 */
 
-public void setNomenClature(String nomenclature) {
+public void setNomenclature(String nomenclature) {
 	if(nomenclature.equals("")) {
-		nomenclature = " ";
+		this.nomenclature = " ";
+		
+	}
+	else {
+		
+		this.nomenclature = nomenclature;
+	}
+}
+	
+	public String getNomenclature() {
+		return nomenclature;
 		
 	}
 	
 	
-}
 
 	private String nomenclature;
 
@@ -82,6 +113,22 @@ public void setNomenClature(String nomenclature) {
 	 * System.out.println(rob instanceof Random); //prints false
 	 */
 
+	public void setMemberObj(Object memberObj) {
+		
+		if (memberObj instanceof String) {
+			
+			memberObj = new Object();
+			
+		}
+	}
+	
+
+	public Object getMemberObj() {
+		
+		return memberObj;
+	}
+	
+	
 	private Object memberObj;
 
 }
