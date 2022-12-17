@@ -12,28 +12,12 @@ public class EncapsulateTheData {
 	 * All negative arguments should set itemsReceived to 0.
 	 */
 	public void setItemsReceived(int itemsReceived) {
-	
 		if(itemsReceived < 0) {
-			
 			this.itemsReceived = 0;
 		}
-		
+	}
 
-	
-	else {
-		this.itemsReceived = itemsReceived;
-	
-	}
-	
-	}
-	
-	public Integer getItemsReceived{
-		
-		return itemsReceived;
-	}
-	
-	
-private	int itemsReceived;
+	private int itemsReceived;
 
 	/*
 	 * degreesTurned must be locked between 0.0 and 360.0 inclusive.
@@ -41,34 +25,20 @@ private	int itemsReceived;
 	 * All parameters outside this range should set degreesTurned to the nearest
 	 * bound.
 	 */
-
-
-
-public void setDegreesTurned(double degreesTurned) {
-	
-	if(degreesTurned<0) {
-		
-		this.degreesTurned = 0;
-	}
-	
-	else if(degreesTurned>360) {
-		
-		this.degreesTurned = 360;
-	}
-	
-	else {
+ public void setDegreesTurned( double degreesTurned) {
+	if (degreesTurned > 0 && degreesTurned <= 360) {
 		this.degreesTurned = degreesTurned;
 	}
-	
+	else {
+		if (degreesTurned < 0) {
+			this.degreesTurned = 0;
+		}
+		if (degreesTurned > 360) {
+			this.degreesTurned = 360;
+		}
+	}
 }
-
-public double getDegreesTurned() {
-	
-	return degreesTurned;
-}
-
-
-private double degreesTurned;
+	private double degreesTurned;
 
 	/*
 	 * nomenclature must not contain an empty String.
@@ -76,25 +46,14 @@ private double degreesTurned;
 	 * An empty String parameter should set nomenclature to a String with a single
 	 * space.
 	 */
-
-public void setNomenclature(String nomenclature) {
-	if(nomenclature.equals("")) {
+public void setNomenclature (String nomenclature) {
+	if (nomenclature.isEmpty()) {
 		this.nomenclature = " ";
-		
 	}
 	else {
-		
 		this.nomenclature = nomenclature;
 	}
 }
-	
-	public String getNomenclature() {
-		return nomenclature;
-		
-	}
-	
-	
-
 	private String nomenclature;
 
 	/*
@@ -112,23 +71,35 @@ public void setNomenclature(String nomenclature) {
 	 * 
 	 * System.out.println(rob instanceof Random); //prints false
 	 */
-
-	public void setMemberObj(Object memberObj) {
-		
-		if (memberObj instanceof String) {
-			
-			memberObj = new Object();
-			
-		}
-	}
 	
+public void setMemberObj (Object memberObj) {
+	if (memberObj instanceof String) {
+		this.memberObj = new Object();
+	}
+	else { 
+		this.memberObj = memberObj;
+	}
+}
+	private Object memberObj;
+	
+	//************************************************************************************************************
+
+	public Integer getItemsReceived() {
+		return itemsReceived;
+	}
+
+	public Double getDegreesTurned() {
+		return degreesTurned;
+	}
+
+	public Object getNomenclature() {
+		return nomenclature;
+	}
 
 	public Object getMemberObj() {
 		
 		return memberObj;
 	}
-	
-	
-	private Object memberObj;
+
 
 }
