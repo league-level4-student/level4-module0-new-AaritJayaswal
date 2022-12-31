@@ -17,4 +17,21 @@ public class Location {
 	public void setY(int y) {
 		this.y = y;
 	}
+
+	boolean equals(Location secondLocation) {
+		if (x == secondLocation.x && y == secondLocation.y) {
+			return true;
+		}
+		return false;
+
+	}
+
+	public int getX() {
+		return x;
+	}
+
+	public int getY() {
+		return y;
+	}
+
 }
